@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>Pipes In Angular</h1>
+
+  <div class="pipe">
+      <h3>Date Pipes</h3>
+      <!-- <button class="manipulations" (click)=date()>ClickMe!</button> -->
+      <div class="manipulations">
+          <p>Full date with time: {{ date }}</p>
+          <p>In short : {{ date | date:'shortDate'}}</p>
+          <p>Medium Date : <b>{{date |date:'mediumDate'}}</b></p>
+          <p>Full Date : <b>{{date | date:'fullDate'}}</b></p>
+          <p>Time : <b>{{date | date:'shortTime'}}</b></p>
+          <p>Time with seconds : <b>{{date | date:'mediumTime'}}</b></p>    
+          <p>Time without format : <b>{{date | date:'hh:mm'}}</b></p>
+          <!-- <p>Time: <b>{{date | date:'hh:mm:ppppp'}}</b></p> -->
+
+
+      </div>
+  </div>
+
+
+  <div class="pipe">
+      <h3>Number Pipes</h3>
+      <div class="manipulations">
+          <p>Without:  {{ 100 }} </p>
+          <p>With 2 decimal places: {{1000000 | number:'3.2'}}</p>
+      </div>
+  </div>
+
+  <div class="pipe">
+      <h3>Currency Pipes</h3>
+      
+      <div class="manipulations">
+          <p>No Format: {{ currency }}</p>
+          <p>USD with sign : {{ currency | currency: 'USD'}}</p>
+          <p>USD without sign : {{" "+ currency | currency: 'USD':'USD'}}</p>
+          <p>INR with sign : {{ currency | currency:'INR' }}</p>
+          <p>INR without sign : {{" "+ currency | currency: 'INR':'INR'}}</p>
+          </div>
+  </div>
+
+
+  <div class="pipe">
+      <h3>String Pipes</h3>
+      <input type="text" #string (keyup)=stringPipe(string.value)>
+      <!-- <button class="manipulations" (click)=pipes(names.value)>ClickMe!</button> -->
+      <p class="manipulations"> Original String: {{ name }}</p>
+
+          <p>{{"Uppercase : "+(name | uppercase)}}</p>
+          <p>{{"Lowercase : "+(name | lowercase)}}</p> 
+      
+  </div>
+
+
+  <div class="pipe">
+      <h3>Percentage Pipes</h3>
+
+      <div class="manipulations">
+          <p>2 Place Formatting: {{ 2 | percent }}</p>
+          </div>
+  </div>
+</div>
